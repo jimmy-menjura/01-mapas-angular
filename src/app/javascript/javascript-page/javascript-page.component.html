@@ -1,0 +1,27 @@
+
+<div>
+    <h1>Naruto</h1>
+    <div *ngFor="let personajes of naruto;let i = index">
+        <hr/>
+        <tr>
+            <td>Nombre:</td><br/>
+            <h2>{{personajes.nombre}}</h2><br/>
+
+            <td>edad:</td><br/>
+            <h2>{{personajes.edad}}</h2>
+            <button (click)="editar(personajes)">Editar</button>
+            <button (click)="Eliminar(i)">Eliminar</button>
+        </tr>
+
+    </div>
+</div>
+<hr>
+<h1>Agregar personajes</h1>
+<div class="formulario" (submit)="agregar()"> 
+    <form>
+        <input class="inputs" name="nombre" [(ngModel)]="personajes.nombre" placeholder="Nombre">
+        <input class="inputs" name="edad" [(ngModel)]="personajes.edad" placeholder="Edad">
+        <button type="submit" class="boton">Agregar</button>
+    </form>
+    <button [routerLink]="['/mapas']">Ir a mapas</button>
+</div>
